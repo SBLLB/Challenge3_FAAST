@@ -2,7 +2,7 @@
 
 module CommuterHolder
 
-DEFAULT_CAPACITY = 2
+ 	DEFAULT_CAPACITY = 40
 
 	def commuter_list
 		@commuter_list ||= []
@@ -13,7 +13,12 @@ DEFAULT_CAPACITY = 2
 	end
 
 	def add(commuter)
+		raise "This is location is full" if full?
 		commuter_list << commuter
+	end
+
+	def expel(commuter)
+		commuter_list.delete(commuter)
 	end
 
 	def full?	
