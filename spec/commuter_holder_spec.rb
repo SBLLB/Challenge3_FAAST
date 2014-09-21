@@ -6,25 +6,29 @@ class Holder; include CommuterHolder end
 
 describe CommuterHolder do
 
+	let(:holder) {Holder.new}
+
 	it 'should list the commuters within it' do
-		holder = Holder.new	
 		commuter = Commuter.new
 		expect{holder.add(commuter)}.to change{holder.commuter_list}.from([]).to([commuter])
 	end
 
 	it 'should set a default capacity' do 
-		holder = Holder.new
-		expect(holder.capacity).to eq(40)
+		expect(holder.capacity).to eq(2)
+	end
+
+	it 'should know when it is full' do 
+		commuter = Commuter.new
+		commuter2 = Commuter.new
+		holder.add(commuter)
+		holder.add(commuter2)
+		# 40.times{holder.add(commuter)}
+		expect(holder).to be_full
 	end
 
 
 
 
-#have a default capacity of 40 
-	#it 'should set a default capacity' do
-	#holder = Holder.new	
-	#expect(holder.capacity).to eq(40)
-	#end
 #know when full
 #add a commuter
 #remove a commuter
