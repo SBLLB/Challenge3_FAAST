@@ -7,12 +7,19 @@ class Holder; include CommuterHolder end
 describe CommuterHolder do
 
 	it 'should list the commuters within it' do
-	holder = Holder.new	
-	commuter = Commuter.new
-	expect{holder.add(commuter)}.to change{holder.commuter_list}.from([]).to([commuter])
+		holder = Holder.new	
+		commuter = Commuter.new
+		expect{holder.add(commuter)}.to change{holder.commuter_list}.from([]).to([commuter])
 	end
 
-#have a list of commuters in it is holding
+	it 'should set a default capacity' do 
+		holder = Holder.new
+		expect(holder.capacity).to eq(40)
+	end
+
+
+
+
 #have a default capacity of 40 
 	#it 'should set a default capacity' do
 	#holder = Holder.new	

@@ -8,6 +8,9 @@ DEFAULT_CAPACITY = 40
 		@commuter_list ||= []
 	end
 
+	def capacity
+		@capacity ||= DEFAULT_CAPACITY
+	end
 
 	def add(commuter)
 		@commuter_list << commuter
