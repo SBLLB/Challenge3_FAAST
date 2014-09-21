@@ -16,11 +16,4 @@ describe Commuter do
 		expect{commuter.touch_out(station)}.to change{station.commuter_count}.by(-1)
 	end
 
-
-	# #it should allow a passenger to alight a carriage
-	# #it should allow a passenger to touch in at a station
-	# #it should allow a passenger to touch out at a station
-
-
-	
 end
