@@ -3,14 +3,13 @@ require 'station'
 
 describe Commuter do
 
-	# let(:passenger) {Passenger.new}
-	# let(:station) {Station.new}
+	
+	it 'should allow a commuter to touch in' do
+		commuter = Commuter.new
+		station = Station.new
+	 	expect{commuter.touch_in(station)}.to change{station.commuter_count}.by(1)
 
-	# it 'should allow a passenger to touch in' do
-		
-	# 	expect{passenger.touch_in(station)}.to change{station.passenger_count}.by(1)
-
-	# end
+	end
 
 	# #it should allow a passenger to alight a carriage
 	# #it should allow a passenger to touch in at a station
