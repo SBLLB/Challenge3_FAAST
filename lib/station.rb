@@ -1,6 +1,6 @@
 #! /usr/bin/env ruby 
 
-require 'commuter_holder'
+require_relative 'commuter_holder'
 
 class Station
 
@@ -12,6 +12,6 @@ include CommuterHolder
 	end
 
 
-
+#Trains in station.
 
 end

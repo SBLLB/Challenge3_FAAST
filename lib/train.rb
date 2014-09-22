@@ -1,6 +1,6 @@
 #! /usr/bin/env ruby
 
-require 'commuter_holder'
+require_relative 'commuter_holder'
 
 class Train
 
@@ -25,10 +25,6 @@ include CommuterHolder
 	def location
 	 	@location  
 	end
-
-	# def receive_commuter(commuter, station)
-
-
 
 
 end
