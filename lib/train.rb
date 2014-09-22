@@ -17,9 +17,17 @@ include CommuterHolder
 	def arrive(station)
 		@location = station
 	end
+
+	def depart(station)
+		@location = "In Transit"
+	end
 	
 	def location
 	 	@location  
 	end
+
+
+
+
 
 end

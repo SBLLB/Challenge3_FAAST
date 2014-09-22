@@ -20,9 +20,18 @@ describe Train do
 		expect(train.location).to eq(station)
 	end
 
+	it 'should be able to depart a station' do 
+		train = Train.new
+		station = Station.new
+		train.depart(station)
+		expect(train.location).to eq("In Transit")
+	end
+
 
 #default location = DEPOT
-#only take a number as an arguement for no of carriages
+#only depart a train when it is the station already
+#only allow train to arrive when there is space in the station?
+#only take a number as an argument for no of carriages
 #empty at end of line/all disembark
 #all alight?
 #when stop at station, exchange 'commuter object' between train and st
