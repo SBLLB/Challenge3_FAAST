@@ -26,6 +26,7 @@ include CommuterHolder
 	 	@location  
 	end
 
+	# def receive_commuter(commuter, station)
 
 
 

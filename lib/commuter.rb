@@ -1,6 +1,7 @@
 #! /usr/bin/env ruby 
 
 require 'station.rb'
+require 'train.rb'
 
 class Commuter
 
@@ -13,5 +14,14 @@ class Commuter
 		station.commuter_list.delete self
 	end
 
+	def board(train ,station)
+		train.add(self)
+		station.expel(self)
+	end
+
+	def disembark(train, station)
+		station.add(self)
+		train.expel(self)
+	end
 
 end

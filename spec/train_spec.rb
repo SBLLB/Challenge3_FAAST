@@ -27,6 +27,10 @@ describe Train do
 		expect(train.location).to eq("In Transit")
 	end
 
+	
+
+
+
 
 #default location = DEPOT
 #only depart a train when it is the station already
