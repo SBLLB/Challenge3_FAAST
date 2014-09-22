@@ -6,13 +6,12 @@ class Station
 
 include CommuterHolder
 
-	def initialize
-
-		@capacity = 200
+	def initialize(capacity = 200)
+		@capacity = capacity
 
 	end
 
-	
+
 
 
 end
