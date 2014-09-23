@@ -39,6 +39,9 @@ describe Commuter do
 		train.depart(station)
 		expect{commuter.disembark(train, station)}.to raise_error(RuntimeError, "Please wait for the train to arrive in a station")
 	end
+
+	
+
 #Can't board/disembark a non-train
 
 

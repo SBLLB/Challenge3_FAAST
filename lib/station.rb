@@ -8,10 +8,29 @@ include CommuterHolder
 
 	def initialize(capacity = 200)
 		@capacity = capacity
+		@train_list = []
 
 	end
 
+	def train_capacity
+		@train_capacity = 2
+	end
 
-#Trains in station.
+	def platforms_full?
+		@train_capacity == train_count
+	end
+
+	def train_count
+		@train_list.count
+	end
+
+	def train_list
+		@train_list
+	end
+
+	def accept(train)
+		@train_list << train
+	end
+
 
 end
