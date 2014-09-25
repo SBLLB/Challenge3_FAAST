@@ -6,24 +6,34 @@ describe Train do
 	let(:train_default) {Train.new}
 	let(:station) {double :station}
 
-	it 'should calculate capacity based on number of carriages' do 
-		expect(train.capacity).to eq(120)
+
+	context 'on initialization' do 
+		
+		it 'should have a default number of 2 carriages' do
+			expect(train_default.capacity).to eq(80)
+		end
+
+		it 'its capacity should calculate from number of carriages' do 
+			expect(train.capacity).to eq(120)
+		end
+
 	end
 
-	it 'should have a default number of 2 carriages' do
-		expect(train_default.capacity).to eq(80)
-	end
 
-	it 'should be able to arrive at a station' do
-		allow(station).to receive(:train_arrive)
-		train.arrive(station)
-		expect(train.location).to eq(station)
-	end
+	context 'should move between stations' do 
 
-	it 'should be able to depart a station' do 
-		allow(station).to receive(:train_leave)
-		train.depart(station)
-		expect(train.location).to eq("In Transit")
+		it 'arrive at a station' do
+			allow(station).to receive(:train_arrive)
+			train.arrive(station)
+			expect(train.location).to eq(station)
+		end
+
+		it 'depart a station' do 
+			allow(station).to receive(:train_leave)
+			train.depart(station)
+			expect(train.location).to eq("In Transit")
+		end
+
 	end
 
 	# it 'should have a default location of depot' do 
