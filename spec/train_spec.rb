@@ -1,28 +1,27 @@
 require 'train'
-require 'station'
 
 describe Train do
 
+	let(:train) {Train.new(3)}
+	let(:train_default) {Train.new}
+	let(:station) {double :station}
+
 	it 'should calculate capacity based on number of carriages' do 
-		train = Train.new(3)
 		expect(train.capacity).to eq(120)
 	end
 
 	it 'should have a default number of 2 carriages' do
-		train = Train.new
-		expect(train.capacity).to eq(80)
+		expect(train_default.capacity).to eq(80)
 	end
 
 	it 'should be able to arrive at a station' do
-		train = Train.new
-		station = Station.new
+		allow(station).to receive(:train_arrive)
 		train.arrive(station)
 		expect(train.location).to eq(station)
 	end
 
 	it 'should be able to depart a station' do 
-		train = Train.new
-		station = Station.new
+		allow(station).to receive(:train_leave)
 		train.depart(station)
 		expect(train.location).to eq("In Transit")
 	end

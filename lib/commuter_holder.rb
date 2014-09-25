@@ -29,6 +29,6 @@ module CommuterHolder
 		commuter_list.count 
 	end
 
-
+#status, in station? On train?
 
 end

@@ -1,48 +1,51 @@
 require 'commuter'
-require 'station'
-require 'train'
+
 
 describe Commuter do
 
 	let(:commuter) {Commuter.new}
-	let(:station) {Station.new}
-	let(:train) {Train.new}
+	let(:station) {double :station, commuter_list: []}
+	let(:train) {double :train, commuter_list: []}
 	
 
 	it 'should allow the commuter to touch in at starting station' do
-	 	expect{commuter.touch_in(station)}.to change{station.commuter_count}.by(1)
+	 	
+	 	expect(station.commuter_list).to receive(:<<).with commuter
+		commuter.touch_in(station)
 	end
 
 	it 'should allow the commuter to touch out of a station' do
-		commuter.touch_in(station)
-		expect{commuter.touch_out(station)}.to change{station.commuter_count}.by(-1)
+		
+		expect(station.commuter_list).to receive(:delete).with commuter
+		commuter.touch_out(station)
+
 	end
 
 	it 'should let a commuter board a train' do
-		commuter.touch_in(station)
-		train.arrive(station)
-		expect{commuter.board(train, station)}.to change{train.commuter_count}.by(1)
+		allow(train).to receive(:location).and_return(station)
+ 		expect(train).to receive(:add).with commuter
+		expect(station).to receive(:expel).with commuter
+		commuter.board(train, station)
 	end
 
 	it 'should let a commuter disembark a train' do 
-		train.arrive(station)
-		commuter.board(train, station)
-		expect{commuter.disembark(train, station)}.to change{train.commuter_count}.by(-1)
+		allow(train).to receive(:location).and_return(station)
+ 		expect(station).to receive(:add).with commuter
+		expect(train).to receive(:expel).with commuter
+		commuter.disembark(train, station)
 	end
 
 	it 'should not allow a commuter to board a train thats not there' do 
-		train.depart(station)
+		allow(train).to receive(:location).and_return(false)
 		expect{commuter.board(train, station)}.to raise_error(RuntimeError, "Please don't commit suicide!")
 	end
 
 	it 'should not let a commuter disembark unless at station' do 
-		train.depart(station)
+		allow(train).to receive(:location).and_return(false)
 		expect{commuter.disembark(train, station)}.to raise_error(RuntimeError, "Please wait for the train to arrive in a station")
 	end
 
-	
-
-#Can't board/disembark a non-train
+#?Test Can't board/disembark a non-train
 
 
 end

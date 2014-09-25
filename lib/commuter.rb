@@ -1,13 +1,13 @@
 #! /usr/bin/env ruby 
 
-require_relative 'station'
-require_relative 'train'
+require 'station'
+require 'train'
 
 class Commuter
 
-
 	def touch_in(station)
 		station.commuter_list << self 
+		#will this raise error if station full as error currently exists in .add(commuter)
 	end
 
 	def touch_out(station)

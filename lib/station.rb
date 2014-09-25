@@ -9,7 +9,6 @@ include CommuterHolder
 	def initialize(capacity = 200)
 		@capacity = capacity
 		@train_list = []
-
 	end
 
 	def train_capacity
@@ -17,7 +16,7 @@ include CommuterHolder
 	end
 
 	def platforms_full?
-		@train_capacity == train_count
+		train_capacity == train_count
 	end
 
 	def train_count
@@ -28,8 +27,13 @@ include CommuterHolder
 		@train_list
 	end
 
-	def accept(train)
+	def train_arrive(train)
+		raise "This station is full" if platforms_full?
 		@train_list << train
+	end
+
+	def train_leave(train)
+		@train_list.delete train
 	end
 
 

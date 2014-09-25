@@ -16,11 +16,12 @@ include CommuterHolder
 	end
 
 	def arrive(station)
+		station.train_arrive(self)
 		@location = station
-		station.accept(self)
 	end
 
 	def depart(station)
+		station.train_leave(self)
 		@location = "In Transit"
 	end
 	
