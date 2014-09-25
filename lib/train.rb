@@ -1,14 +1,17 @@
 #! /usr/bin/env ruby
 
-require_relative 'commuter_holder'
-require_relative 'station'
+require 'commuter_holder'
+require 'station'
 
 class Train
 
 include CommuterHolder
 
+ # DEFAULT_LOCATION = Depot
+
 	def initialize(carriages = 2)
 		@carriages = carriages
+		# location ||= DEFAULT_LOCATION
 	end
 
 	def capacity 
@@ -28,6 +31,8 @@ include CommuterHolder
 	def location
 	 	@location  
 	end
+
+	
 
 
 end

@@ -26,18 +26,13 @@ describe Train do
 		expect(train.location).to eq("In Transit")
 	end
 
+	# it 'should have a default location of depot' do 
+	# 	expect(train.location).to eq(:Depot)
+	# end
+
 	
 
-
-
-
-#default location = DEPOT
 #only depart a train when it is the station already
 #only allow train to arrive when there is space in the station?
-#only take a number as an argument for no of carriages
-#empty at end of line/all disembark
-#all alight?
-#when stop at station, exchange 'commuter object' between train and st
-
 
 end

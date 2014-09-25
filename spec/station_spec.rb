@@ -23,34 +23,22 @@ describe Station do
 	it 'should know if its platforms are full' do 
 		2.times{station.train_arrive(:train)}
 		expect(station.platforms_full?).to be true
-		# train, train1, train2 = Train.new, Train.new, Train.new
-		# train.arrive(station)
-		# train1.arrive(station)
-		# expect(station.train_count).to eq(2)	
+
 	end
 
 	it 'should know when a train has left a platform' do 
 		station.train_arrive(:train)
 		expect{station.train_leave(:train)}.to change{station.train_count}.by(-1)
-
-		# train, train1, train2 = Train.new, Train.new, Train.new
-		# train.arrive(station)
-		# train1.arrive(station)
-		# expect{train.depart(station)}.to change{station.train_count}.by(-1)
 	end
 
 	it 'should not allow a train to arrive if station full' do 
 		2.times{station.train_arrive(:train)}
 		expect{station.train_arrive(:train)}.to raise_error(RuntimeError)
 
-		# train, train1, train2 = Train.new, Train.new, Train.new
-		# train.arrive(station)
-		# train1.arrive(station)
-		# expect(station.platforms_full?).to be true
 	end
 
-
-	# it 'should give an error if argument passed is not an integer' do 
+# it 'should give an error if argument passed is not an integer' do 
+	
 	#it should allow a bespoke station capacity to be passed as an argument on creation.
 
 end

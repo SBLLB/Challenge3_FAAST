@@ -1,6 +1,6 @@
 #! /usr/bin/env ruby 
 
-require_relative 'commuter_holder'
+require 'commuter_holder'
 
 class Station
 
