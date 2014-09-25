@@ -7,6 +7,29 @@ describe Commuter do
 	let(:station) {double :station, commuter_list: []}
 	let(:train) {double :train, commuter_list: []}
 	
+	context ' oyster card' do 
+
+		it 'is created on initialization' do 
+		 	expect(commuter.balance).to eq 10
+		end
+		
+		it 'deducts £2 on touch in' do 
+			allow(station.commuter_list).to receive(:<<).with commuter
+			expect{commuter.touch_in(station)}.to change{commuter.balance}.by(-2)
+		end
+
+		it 'will not gain access to station if balance £2 or less' do 
+			commuter.balance = 2 
+			expect{commuter.touch_in(station)}.to raise_error(RuntimeError)
+		end
+
+		it 'can be topped up' do
+			expect{commuter.top_up(20)}.to change{commuter.balance}.by(20)
+		end
+
+	end
+
+
 	context 'should move in and out of stations by' do 
 
 		it 'touching in at a station' do

@@ -5,8 +5,20 @@ require 'train'
 
 class Commuter
 
+attr_accessor :balance
+
+	def initialize 
+		@balance = 10
+	end
+
+	def top_up(value)
+		@balance += value
+	end
+
 	def touch_in(station)
+		raise "You have insufficient funds" if @balance <= 2
 		station.commuter_list << self 
+		@balance -= 2
 		#will this raise error if station full as error currently exists in .add(commuter)
 	end
 
