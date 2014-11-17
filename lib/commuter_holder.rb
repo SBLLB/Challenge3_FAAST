@@ -11,7 +11,7 @@ module CommuterHolder
 	def capacity
 		@capacity ||= DEFAULT_CAPACITY
 	end
-#should add commuter and expel move to train.rb?
+
 	def add(commuter)
 		raise "This is location is full" if full?
 		commuter_list << commuter
@@ -29,6 +29,6 @@ module CommuterHolder
 		commuter_list.count 
 	end
 
-#status, in station? On train?
+# Add a commuter status? I.e. In station? On train?
 
 end

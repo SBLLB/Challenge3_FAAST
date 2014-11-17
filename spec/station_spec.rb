@@ -40,7 +40,7 @@ describe Station do
 
 		it 'by not allowing a train to arrive if station full' do 
 			2.times{station.train_arrive(:train)}
-			expect{station.train_arrive(:train)}.to raise_error(RuntimeError)
+			expect{station.train_arrive(:train)}.to raise_error("This station is full")
 
 		end
 

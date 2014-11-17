@@ -6,14 +6,17 @@ class Station
 
 include CommuterHolder
 
+attr_reader :train_list, :train_capacity
+
 	def initialize(capacity = 200)
 		@capacity = capacity
 		@train_list = []
-	end
-
-	def train_capacity
 		@train_capacity = 2
 	end
+
+	# def train_capacity
+	# 	@train_capacity = 2
+	# end
 
 	def platforms_full?
 		train_capacity == train_count
@@ -23,9 +26,9 @@ include CommuterHolder
 		@train_list.count
 	end
 
-	def train_list
-		@train_list
-	end
+	# def train_list
+	# 	@train_list
+	# end
 
 	def train_arrive(train)
 		raise "This station is full" if platforms_full?

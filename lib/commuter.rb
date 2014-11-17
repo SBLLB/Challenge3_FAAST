@@ -19,7 +19,6 @@ attr_accessor :balance
 		raise "You have insufficient funds" if @balance <= 2
 		station.commuter_list << self 
 		@balance -= 2
-		#will this raise error if station full as error currently exists in .add(commuter)
 	end
 
 	def touch_out(station)

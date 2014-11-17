@@ -1,12 +1,13 @@
 #! /usr/bin/env ruby
 
 require 'commuter_holder'
-require 'station'
+# require 'station'
 
 class Train
 
 include CommuterHolder
 
+attr_reader :location
  # DEFAULT_LOCATION = Depot
 
 	def initialize(carriages = 2)
@@ -28,9 +29,7 @@ include CommuterHolder
 		@location = "In Transit"
 	end
 	
-	def location
-	 	@location  
-	end
+	
 
 	
 
