@@ -24,17 +24,19 @@ Initialised with an OysterCard balance of £10.00.
 ``` commuter_name = Commuter.new ```
 
 * Entering/Leaving a station:  
-  ```commuter.touch_in(station)
+
+```commuter.touch_in(station)
 commuter.touch_out(station)```
 
 * Boarding/Disembarking a train:
-	```commuter.board(train, station)
+
+```commuter.board(train, station)
 commuter.disemark(train, station)```
 
-* Reading a commuter's Oyster Card Balance: 
+* Reading a commuter's Oyster Card Balance:  
 Read instance Variable, @balance: ```commuter.balance```
 
-* Topping up commuter's OysterCard:
+* Topping up commuter's OysterCard:  
 ```commuter.top_up(value)```
 
 ####Train
@@ -67,9 +69,9 @@ Initialised with a default of 2 platforms, therefore only two trains can be in a
 * Github
 
 ### To do 
-[ ] Employ SOLID principles more throughout.
-[ ] Separate Oystercard into separate class/module.
-[ ] Enable Train to initiate with a default location of 'Depot'.
-[ ] Ascertain what methods should be set to 'private' within each class. 
+[ ] Employ SOLID principles more throughout.  
+[ ] Separate Oystercard into separate class/module.  
+[ ] Enable Train to initiate with a default location of 'Depot'.  
+[ ] Ascertain what methods should be set to 'private' within each class.  
 [ ] Introduce mock_model testing in rspec for CommuterHolder module. 
 
