@@ -20,24 +20,17 @@ Create a model of a tube system. The FAAST tube system has to cater for the foll
 ####Commuter
 Initialised with an OysterCard balance of £10.00.
 
-* Adding a new commuter: 
-```commuter_name = Commuter.new ```
+* Adding a new commuter: ```commuter_name = Commuter.new ```
 
-* Entering/Leaving a station:  
-
-```commuter.touch_in(station)
+* Entering/Leaving a station:  ```commuter.touch_in(station)
 commuter.touch_out(station)```
 
-* Boarding/Disembarking a train:
-
-```commuter.board(train, station)
+* Boarding/Disembarking a train: ```commuter.board(train, station)
 commuter.disemark(train, station)```
 
-* Reading a commuter's Oyster Card Balance:  
-Read instance Variable, @balance: ```commuter.balance```
+* Reading a commuter's Oyster Card Balance:Read instance Variable, @balance: ```commuter.balance```
 
-* Topping up commuter's OysterCard:  
-```commuter.top_up(value)```
+* Topping up commuter's OysterCard: ```commuter.top_up(value)```
 
 ####Train
 Initialised with a default of 2 carriages at a capacity of 40pax per carriage.
