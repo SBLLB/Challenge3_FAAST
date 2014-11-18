@@ -1,13 +1,12 @@
-FAAST System
-=============
-
-Week 1 Challenge at Maker's Academy
------------------------------------
-
-### The 'Architect Badge Challenge' 
+##FAAST System
 
 
-####The Scenario...
+#### The 'Architect Badge Challenge'. Weekend Challenge, week 1 at Maker's Academy
+
+
+###The Objective
+
+Create a model of a tube system. The FAAST tube system has to cater for the following
 
 + There will be a number of trains inside the system
 + Trains will travel from station to station
@@ -17,36 +16,60 @@ Week 1 Challenge at Maker's Academy
 + Each train is made of a number of coaches
 + Passengers can only touch in at a station if their balance is more than 2 GBP
 
-#### The Solution
+### How To Use
+####Commuter
+Initialised with an OysterCard balance of £10.00.
 
-##### Methods, Attributes & Classes
+* Adding a new commuter: 
+``` commuter_name = Commuter.new ```
 
-* Commuter
-* Station
-* Train
-* Commuter Holder (module)
+* Entering/Leaving a station:  
+  ```commuter.touch_in(station)
+commuter.touch_out(station)```
 
-##### How To Use
-* Initialize Station.new, Train.new, Person.new.  *Note, ideally introduce multiple stations to enable trains to travel to and fro.*
-* To introduce a commuter to the FAAST system ->   *commuter.touch_in(station)*
-* To get a commuter to board a train ->  *commuter.board(train, station)*
-* To get a commuter to disembark a train ->   *commuter.disemark(train, station)*
-* To top up a commuter's Oyster Card ->   *commuter.top_up(value)*
-* To get a train to arrive in a station ->   *train.arrive(station)*
-* To get a train to depart from a station  ->   *train.depart(station)*
+* Boarding/Disembarking a train:
+	```commuter.board(train, station)
+commuter.disemark(train, station)```
 
-##### Defaults and Customisable Objects
-* A  Commuter is created with a starting Oyster Card balance of £10
-* A Train is created with a default of 2 carriages. To set a different number of carriages ->   *train= Train.new(no_of_carriages)*
-* Each Train carriage has a set capacity of 40 Commuters
-* A Station has a set platform capacity of 2. Only two trains can be in a station at any one time.
-* A Station has a Commuter capacity of 200 unless overridden. ->  *station= Station.new(capacity)*
+* Reading a commuter's Oyster Card Balance: 
+Read instance Variable, @balance: ```commuter.balance```
+
+* Topping up commuter's OysterCard:
+```commuter.top_up(value)```
+
+####Train
+Initialised with a default of 2 carriages at a capacity of 40pax per carriage.
+
+* Create a train with more/less that the default 2 carriages: ``` train = Train.new(no_of_carriages)```
+
+* Arrive a train into a station: ```train.arrive(station)```
+
+* Depart a train from a station: ```train.depart(station)```
+
+* View what commuters are currently in the station: ``` train.commuter_list ```
 
 
-#### Tools Used To Build
+####Station
+Initialised with a default of 2 platforms, therefore only two trains can be in a station at one time. Also initialised with a commuter capacity of 200.
 
-* SublimeText
+* Create a station with a capacity different to the default 200: ```station= Station.new(capacity)```
+
+* View what trains are currently in the station: ``` station.train_list ```
+
+* View what commuters are currently in the station: ``` station.commuter_list ```
+
+### Technologies Used
+* Ruby
 * RSPEC
+* SublimeText
 * Command Line
 * IRB
 * Github
+
+### To do 
+[ ] Employ SOLID principles more throughout.
+[ ] Separate Oystercard into separate class/module.
+[ ] Enable Train to initiate with a default location of 'Depot'.
+[ ] Ascertain what methods should be set to 'private' within each class. 
+[ ] Introduce mock_model testing in rspec for CommuterHolder module. 
+

@@ -14,10 +14,6 @@ attr_reader :train_list, :train_capacity
 		@train_capacity = 2
 	end
 
-	# def train_capacity
-	# 	@train_capacity = 2
-	# end
-
 	def platforms_full?
 		train_capacity == train_count
 	end
@@ -25,10 +21,6 @@ attr_reader :train_list, :train_capacity
 	def train_count
 		@train_list.count
 	end
-
-	# def train_list
-	# 	@train_list
-	# end
 
 	def train_arrive(train)
 		raise "This station is full" if platforms_full?
