@@ -62,7 +62,7 @@ Initialised with a default of 2 platforms, therefore only two trains can be in a
 * Github
 
 ### To do 
-[ ] Employ SOLID principles more throughout.  
+- [ ] Employ SOLID principles more throughout.  
 [ ] Separate Oystercard into separate class/module.  
 [ ] Enable Train to initiate with a default location of 'Depot'.  
 [ ] Ascertain what methods should be set to 'private' within each class.  
