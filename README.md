@@ -21,7 +21,7 @@ Create a model of a tube system. The FAAST tube system has to cater for the foll
 Initialised with an OysterCard balance of £10.00.
 
 * Adding a new commuter: 
-``` commuter_name = Commuter.new ```
+```commuter_name = Commuter.new ```
 
 * Entering/Leaving a station:  
 
